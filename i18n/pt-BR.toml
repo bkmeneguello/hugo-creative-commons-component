@@ -1,0 +1,151 @@
+[creative_commons.licence]
+other = "Este trabalho está licenciado sob a"
+[creative_commons.cc.alt]
+other = "Licença Creative Commons"
+[creative_commons.zero.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Domínio Público {{ .version }}"
+[creative_commons.zero.alt]
+other = "Este trabalho foi marcado como dedicado ao domínio público"
+[creative_commons.by.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Atribuição {{ .version }}"
+[creative_commons.by.alt]
+other = "Créditos devem ser dados ao criador"
+[creative_commons.by-nd.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Atribuição-SemDerivações {{ .version }}"
+[creative_commons.by-sa.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Atribuição-CompartilhaIgual {{ .version }}"
+[creative_commons.by-nc.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Atribuição-NãoComercial {{ .version }}"
+[creative_commons.by-nc-nd.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Atribuição-NãoComercial-SemDerivações {{ .version }}"
+[creative_commons.by-nc-sa.text]
+other = "Licença {{ .jurisdiction }} Creative Commons Atribuição-NãoComercial-CompartilhaIgual {{ .version }}"
+[creative_commons.nc.alt]
+other = "Apenas uso não comercial deste trabalho é permitido"
+[creative_commons.nd.alt]
+other = "Nenhuma derivação ou adaptação deste trabalho é permitido"
+[creative_commons.sa.alt]
+other = "Adaptações devem ser compartilhadas sob os mesmos termos"
+
+[creative_commons.jurisdiction.international]
+other = "Internacional"
+[creative_commons.jurisdiction.ar]
+other = "Argentina"
+[creative_commons.jurisdiction.au]
+other = "Austrália"
+[creative_commons.jurisdiction.at]
+other = "Áustria"
+[creative_commons.jurisdiction.be]
+other = "Bélgica"
+[creative_commons.jurisdiction.br]
+other = "Brasil"
+[creative_commons.jurisdiction.bg]
+other = "Bulgaria"
+[creative_commons.jurisdiction.ca]
+other = "Canadá"
+[creative_commons.jurisdiction.cl]
+other = "Chile"
+[creative_commons.jurisdiction.cn]
+other = "China"
+[creative_commons.jurisdiction.co]
+other = "Colômbia"
+[creative_commons.jurisdiction.cr]
+other = "Costa Rica"
+[creative_commons.jurisdiction.hr]
+other = "Croácia"
+[creative_commons.jurisdiction.cz]
+other = "Republica Checa"
+[creative_commons.jurisdiction.dk]
+other = "Dinamarca"
+[creative_commons.jurisdiction.ec]
+other = "Equador"
+[creative_commons.jurisdiction.eg]
+other = "Egito"
+[creative_commons.jurisdiction.ee]
+other = "Estônia"
+[creative_commons.jurisdiction.fi]
+other = "Finlandia"
+[creative_commons.jurisdiction.fr]
+other = "França"
+[creative_commons.jurisdiction.de]
+other = "Alemanha"
+[creative_commons.jurisdiction.gr]
+other = "Grécia"
+[creative_commons.jurisdiction.gt]
+other = "Guatemala"
+[creative_commons.jurisdiction.hk]
+other = "Hong Kong"
+[creative_commons.jurisdiction.hu]
+other = "Hungria"
+[creative_commons.jurisdiction.igo]
+other = "IGO"
+[creative_commons.jurisdiction.in]
+other = "Índia"
+[creative_commons.jurisdiction.ie]
+other = "Irlanda"
+[creative_commons.jurisdiction.il]
+other = "Israel"
+[creative_commons.jurisdiction.it]
+other = "Italia"
+[creative_commons.jurisdiction.jp]
+other = "Japão"
+[creative_commons.jurisdiction.lu]
+other = "Luxemburgo"
+[creative_commons.jurisdiction.mk]
+other = "Macedônia"
+[creative_commons.jurisdiction.my]
+other = "Malásia"
+[creative_commons.jurisdiction.mt]
+other = "Malta"
+[creative_commons.jurisdiction.mx]
+other = "México"
+[creative_commons.jurisdiction.nl]
+other = "Holanda"
+[creative_commons.jurisdiction.nz]
+other = "Nova Zelândia"
+[creative_commons.jurisdiction.no]
+other = "Noruega"
+[creative_commons.jurisdiction.pe]
+other = "Perú"
+[creative_commons.jurisdiction.ph]
+other = "Filipinas"
+[creative_commons.jurisdiction.pl]
+other = "Polônia"
+[creative_commons.jurisdiction.pt]
+other = "Portugal"
+[creative_commons.jurisdiction.pr]
+other = "Porto Rico"
+[creative_commons.jurisdiction.ro]
+other = "Romênia"
+[creative_commons.jurisdiction.rs]
+other = "Sérvia"
+[creative_commons.jurisdiction.sg]
+other = "Singapura"
+[creative_commons.jurisdiction.si]
+other = "Eslovênia"
+[creative_commons.jurisdiction.za]
+other = "África do Sul"
+[creative_commons.jurisdiction.kr]
+other = "Coreia do Sul"
+[creative_commons.jurisdiction.es]
+other = "Espanha"
+[creative_commons.jurisdiction.se]
+other = "Suécia"
+[creative_commons.jurisdiction.ch]
+other = "Suiça"
+[creative_commons.jurisdiction.tw]
+other = "Taiwan"
+[creative_commons.jurisdiction.th]
+other = "Tailândia"
+[creative_commons.jurisdiction.uk]
+other = "UK: Inglaterra & Wales"
+[creative_commons.jurisdiction.scotland]
+other = "UK: Escócia"
+[creative_commons.jurisdiction.ug]
+other = "Uganda"
+[creative_commons.jurisdiction.us]
+other = "Estados Unidos"
+[creative_commons.jurisdiction.ve]
+other = "Venezuela"
+[creative_commons.jurisdiction.vn]
+other = "Vietnam"

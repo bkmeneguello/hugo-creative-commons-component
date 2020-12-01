@@ -1,0 +1,64 @@
+{{ $cc := .Site.Params.creative_commons -}}
+{{ $licence := $cc.licence | default "by" -}}
+{{ $licence_parts := split $licence "-" -}}
+{{ $version := $cc.version | default (cond (eq $licence "zero") "1.0" "4.0") -}}
+{{ $jurisdiction := cond (eq $version "3.0") ($cc.jurisdiction | default "international") "international" -}}
+{{ $langs := split .Site.LanguageCode "-" -}}
+{{ $lang := printf "%s_%s" (index $langs 0) (upper (index $langs 1)) -}}
+{{ $deed := cond (eq $version "3.0") (cond (eq $jurisdiction "international") "" $jurisdiction) (printf "deed.%s" $lang) -}}
+{{ $url := printf "https://creativecommons.org/licenses/%s/%s/%s" $licence $version $deed -}}
+{{ $style := $cc.style | default "badge" -}}
+{{ $text_style := $cc.text | default "long" -}}
+{{ $position := $cc.position | default "after" -}}
+{{ $jurisdiction_text := i18n (printf "creative_commons.jurisdiction.%s" $jurisdiction) -}}
+{{ $text_long := i18n (printf "creative_commons.%s.text" $licence) (dict "version" $version "jurisdiction" $jurisdiction_text) -}}
+{{ $text_short := printf "%s %s%s" (cond (eq $licence "zero") "CC0" (printf "CC %s" (upper $licence))) $version (cond (eq $jurisdiction "international") "" (printf " %s" (upper $jurisdiction))) -}}
+{{ $text := cond (eq $text_style "long") $text_long $text_short -}}
+{{ $cc_alt := i18n "creative_commons.cc.alt" -}}
+{{ $zero_alt := i18n "creative_commons.zero.alt" -}}
+{{ $by_alt := i18n "creative_commons.by.alt" -}}
+{{ $nc_alt := i18n "creative_commons.nc.alt" -}}
+{{ $nd_alt := i18n "creative_commons.nd.alt" -}}
+{{ $sa_alt := i18n "creative_commons.sa.alt" -}}
+
+{{ define "partials/creative-commons/licence" -}}
+{{ i18n "creative_commons.licence" }} <a rel="license" href="{{ .url }}">{{ .text }}</a>
+{{- end -}}
+
+{{ define "partials/creative-commons/circle" -}}
+{{ $circle_url := printf "creative-commons/%s.svg" .icon | absURL -}}
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" alt="{{ .alt }}" title="{{ .alt }}" src="{{ $circle_url }}" />
+{{- end -}}
+
+<p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text">
+{{ if eq $position "before" -}}
+{{- partial "creative-commons/licence" (dict "url" $url "text" $text) }}
+{{ if not $cc.inline }}<br />{{ end }}
+{{- end -}}
+    <a rel="license" href="{{ $url }}">
+        {{ if eq $style "badge" -}}
+        {{ $icon := index (dict "normal" "88x31" "small" "80x15") (default "normal" $cc.icon) -}}
+        {{ $badge_alt := $cc_alt -}}
+        {{ $badge_alt := printf "%s\n%s" $badge_alt (cond (eq $licence "zero") $zero_alt $by_alt) -}}
+        {{ $badge_alt := cond (in $licence_parts "nc") (printf "%s\n%s" $badge_alt $nc_alt) $badge_alt -}}
+        {{ $badge_alt := cond (in $licence_parts "nd") (printf "%s\n%s" $badge_alt $nd_alt) $badge_alt -}}
+        {{ $badge_alt := cond (in $licence_parts "sa") (printf "%s\n%s" $badge_alt $sa_alt) $badge_alt -}}
+        {{ $badge_url := printf "creative-commons/%s/%s/%s.png" $licence $version $icon | absURL }}
+        <img alt="{{ $badge_alt }}" title="{{ $badge_alt }}" style="border-width:0" src="{{ $badge_url }}" />
+        {{- else if eq $style "circle" -}}
+        {{ partial "creative-commons/circle" (dict "alt" $cc_alt "icon" "cc") }}
+        {{ if eq $licence "zero" -}}
+        {{ partial "creative-commons/circle" (dict "alt" $zero_alt "icon" "zero") }}
+        {{- else -}}
+        {{ partial "creative-commons/circle" (dict "alt" $by_alt "icon" "by") }}
+        {{- end }}
+        {{ if in $licence_parts "nc" }}{{ partial "creative-commons/circle" (dict "alt" $nc_alt "icon" "nc") }}{{ end -}}
+        {{ if in $licence_parts "nd" }}{{ partial "creative-commons/circle" (dict "alt" $nd_alt "icon" "nd") }}{{ end -}}
+        {{ if in $licence_parts "sa" }}{{ partial "creative-commons/circle" (dict "alt" $sa_alt "icon" "sa") }}{{ end -}}
+        {{- end }}
+    </a>
+{{ if eq $position "after" }}
+{{ if not $cc.inline }}<br />{{ end }}
+{{ partial "creative-commons/licence" (dict "url" $url "text" $text) }}.
+{{ end }}
+</p>
